@@ -1,3 +1,3 @@
 # Inclub-app
 
-Proyecto hecho con Unity 2017.1.1f1.
+Proyecto hecho con Unity 5.6.2f1.
