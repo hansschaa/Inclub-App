@@ -9,9 +9,7 @@ public class ViewController : MonoBehaviour
 
 	//Global Variables
 	public static bool _fromChapter;
-
 	
-
 	//Views
 	[Header("Views")]
 	public GameObject _titleScreenView;
@@ -34,17 +32,8 @@ public class ViewController : MonoBehaviour
 	public float _delayChapter;
 	public Camera mainCamera;
 
-
-
-	
-
-	public /// <summary>
-	/// Start is called on the frame when a script is enabled just before
-	/// any of the Update methods is called the first time.
-	/// </summary>
-	void Start()
+	public void Start()
 	{
-
 		if(ViewController._fromChapter)
 		{
 			ViewController._fromChapter = false;
@@ -60,12 +49,7 @@ public class ViewController : MonoBehaviour
 
 	public void pressBackButton()
 	{
-		if(this._contactView.activeInHierarchy)
-		{
-			this.updateView(_titleScreenView,_contactView,false, false);
-		}
-
-		else if(this._introductionView1.activeInHierarchy)
+		if(this._introductionView1.activeInHierarchy)
 		{
 			this.updateView(_titleScreenView,_introductionView1,false, false);
 		}
@@ -96,7 +80,7 @@ public class ViewController : MonoBehaviour
 
 	public void pressSocialNetworkButton()
 	{
-		this.updateView(_contactView, _titleScreenView, true, false);
+		_contactView.SetActive(true);
 	}	
 
 	public void pressPlayButton()
@@ -106,14 +90,12 @@ public class ViewController : MonoBehaviour
 
 	public void pressChapterButton(int chapterNumber)
 	{
-		
 		this.updateView(_loadingView, _chapterListView, false, false);
 		this.mainCamera.backgroundColor = Color.gray;
 		StartCoroutine(waitThenCallback(this._delayChapter, () => 
         { 
 			 SceneManager.LoadScene(chapterNumber);
 		}));
-
 	}
 
 	public void pressExitButton()
@@ -143,5 +125,10 @@ public class ViewController : MonoBehaviour
 	{
 		yield return new WaitForSeconds(time);
 		callback();
+	}
+
+	public void pressCloseContact()
+	{
+		_contactView.SetActive(false);
 	}
 }
