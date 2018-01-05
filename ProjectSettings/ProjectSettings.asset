@@ -40,8 +40,6 @@ PlayerSettings:
   m_SplashScreenLogos:
   - logo: {fileID: 10404, guid: 0000000000000000e000000000000000, type: 0}
     duration: 2
-  - logo: {fileID: 21300000, guid: ec71b102f19da174b834d2051fc4b15f, type: 3}
-    duration: 2
   m_SplashScreenBackgroundLandscape: {fileID: 0}
   m_SplashScreenBackgroundPortrait: {fileID: 0}
   m_VirtualRealitySplashScreen: {fileID: 0}
@@ -217,8 +215,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/hscha/Desktop/android.keystore
-  AndroidKeyaliasName: asa
+  AndroidKeystoreName: C:/Users/hscha/Desktop/android2018.keystore
+  AndroidKeyaliasName: olium
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1

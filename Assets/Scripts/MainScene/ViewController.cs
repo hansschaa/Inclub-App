@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using Prime31.TransitionKit;
 
 public class ViewController : MonoBehaviour 
 {
@@ -17,7 +18,7 @@ public class ViewController : MonoBehaviour
 	public GameObject _chapterListView;
 	public GameObject _introductionView1;
 	public GameObject _introductionView2;
-
+	public GameObject _happyTraveler;
 	public GameObject _loadingView;
 
 	//Buttons
@@ -47,21 +48,31 @@ public class ViewController : MonoBehaviour
 		}
 	}
 
+	public void pressHappyTraveler()
+	{
+		this.updateView(this._happyTraveler,this._titleScreenView,true, false);
+	}
+
 	public void pressBackButton()
 	{
 		if(this._introductionView1.activeInHierarchy)
 		{
-			this.updateView(_titleScreenView,_introductionView1,false, false);
+			this.updateView(this._titleScreenView,this._introductionView1,false, false);
 		}
 
 		else if(this._introductionView2.activeInHierarchy)
 		{
-			this.updateView(_introductionView1,_introductionView2,true, true);
+			this.updateView(this._introductionView1,this._introductionView2,true, true);
+		}
+
+		else if(this._happyTraveler.activeInHierarchy)
+		{
+			this.updateView(this._titleScreenView,this._happyTraveler,false, false);
 		}
 
 		else if(this._chapterListView.activeInHierarchy)
 		{
-			this.updateView(_introductionView2,_chapterListView,true, true);
+			this.updateView(this._introductionView2,this._chapterListView,true, true);
 		}
 	}
 
@@ -69,28 +80,37 @@ public class ViewController : MonoBehaviour
 	{
 		if(this._introductionView1.activeInHierarchy)
 		{
-			this.updateView(_introductionView2,_introductionView1,true, true);
+			this.updateView(this._introductionView2,this._introductionView1,true, true);
 		}
 
 		else if(this._introductionView2.activeInHierarchy)
 		{
-			this.updateView(_chapterListView,_introductionView2,true, false);
+			this.updateView(this._chapterListView,this._introductionView2,true, false);
 		}
 	}
 
 	public void pressSocialNetworkButton()
 	{
-		_contactView.SetActive(true);
+		this._contactView.SetActive(true);
 	}	
 
 	public void pressPlayButton()
 	{
-		this.updateView(_introductionView1, _titleScreenView, true, true);
+		// var doorway = new DoorwayTransition()
+		// {
+		// 	// nextScene = SceneManager.GetActiveScene().buildIndex == 1 ? 2 : 1,
+		// 	duration = 1.0f,
+		// 	perspective = 1.5f,
+		// 	depth = 3f,
+		// 	runEffectInReverse = false
+		// };
+		// TransitionKit.instance.transitionWithDelegate( doorway );
+		this.updateView(this._introductionView1,this._titleScreenView, true, true);
 	}
 
 	public void pressChapterButton(int chapterNumber)
 	{
-		this.updateView(_loadingView, _chapterListView, false, false);
+		this.updateView(this._loadingView, this._chapterListView, false, false);
 		this.mainCamera.backgroundColor = Color.gray;
 		StartCoroutine(waitThenCallback(this._delayChapter, () => 
         { 
@@ -129,6 +149,6 @@ public class ViewController : MonoBehaviour
 
 	public void pressCloseContact()
 	{
-		_contactView.SetActive(false);
+		this._contactView.SetActive(false);
 	}
 }

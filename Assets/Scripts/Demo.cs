@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using UnityEngine.UI;
 
 
 
@@ -24,6 +25,8 @@ public class Demo : MonoBehaviour {
 	private string message;
 	private bool recognized;
 	private string newGestureName = "";
+
+	public Text textDebug;
 
 	void Start () 
 	{
@@ -104,11 +107,11 @@ public class Demo : MonoBehaviour {
 	{
 		bool isTick = checkTick();
 		if(isTick)
-			print("Es un tick");
+			textDebug.text = "Es un tick ossas";
 
 		else	
-			print("No está tratando de dibujar un tick");
-	}
+			textDebug.text = "Eso no es un tick sablaza";
+				}
 
 	public bool checkTick()
 	{

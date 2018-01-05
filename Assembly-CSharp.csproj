@@ -51,12 +51,37 @@
      <Compile Include="Assets\Scripts\Chapter 1\Chapter1ViewController.cs" />
      <Compile Include="Assets\Scripts\Demo.cs" />
      <Compile Include="Assets\Scripts\MainScene\ConfigController.cs" />
+     <Compile Include="Assets\Scripts\MainScene\UIAnimationController.cs" />
      <Compile Include="Assets\Scripts\MainScene\ViewController.cs" />
      <Compile Include="Assets\Scripts\SplashScreen\SplashScreenController.cs" />
+     <Compile Include="Assets\TransitionKit\TransitionKit.cs" />
+     <Compile Include="Assets\TransitionKit\TransitionKitDelegate.cs" />
+     <Compile Include="Assets\TransitionKit\transitions\BlurTransition.cs" />
+     <Compile Include="Assets\TransitionKit\transitions\DoorwayTransition.cs" />
+     <Compile Include="Assets\TransitionKit\transitions\FadeTransition.cs" />
+     <Compile Include="Assets\TransitionKit\transitions\FishEyeTransition.cs" />
+     <Compile Include="Assets\TransitionKit\transitions\ImageMaskTransition.cs" />
+     <Compile Include="Assets\TransitionKit\transitions\PixelateTransition.cs" />
+     <Compile Include="Assets\TransitionKit\transitions\RippleTransition.cs" />
+     <Compile Include="Assets\TransitionKit\transitions\SquaresTransition.cs" />
+     <Compile Include="Assets\TransitionKit\transitions\TriangleSlicesTransition.cs" />
+     <Compile Include="Assets\TransitionKit\transitions\VerticalSlicesTransition.cs" />
+     <Compile Include="Assets\TransitionKit\transitions\WindTransition.cs" />
+     <None Include="Assets\TransitionKit\transitions\shaders\TextureWithAlpha.shader" />
      <None Include="Assets\Demigiant\DOTween\readme.txt" />
+     <None Include="Assets\TransitionKit\transitions\shaders\Pixelate.shader" />
      <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
+     <None Include="Assets\TransitionKit\transitions\shaders\Fader.shader" />
+     <None Include="Assets\TransitionKit\transitions\shaders\Wind.shader" />
+     <None Include="Assets\TransitionKit\transitions\shaders\CurvedWind.shader" />
+     <None Include="Assets\TransitionKit\transitions\shaders\Blur.shader" />
+     <None Include="Assets\TransitionKit\transitions\shaders\FishEye.shader" />
+     <None Include="Assets\TransitionKit\transitions\shaders\Mask.shader" />
      <None Include="Assets\Demigiant\DOTween\DOTween50.xml" />
+     <None Include="Assets\TransitionKit\transitions\shaders\Doorway.shader" />
      <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
+     <None Include="Assets\TransitionKit\transitions\shaders\Ripple.shader" />
+     <None Include="Assets\TransitionKit\transitions\shaders\Squares.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/unity 5.6/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

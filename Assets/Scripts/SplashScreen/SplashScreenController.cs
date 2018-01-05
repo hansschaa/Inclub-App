@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Prime31.TransitionKit;
 using UnityEngine.SceneManagement;
 using System;
 
@@ -28,8 +29,8 @@ public class SplashScreenController : MonoBehaviour
 
 	//Sequences
 	private Sequence _splashScreen;
-
 	private Sequence _secondLogoView;
+
 
 	// Use this for initialization
 	void Start () 
@@ -51,6 +52,29 @@ public class SplashScreenController : MonoBehaviour
 		this._splashScreen.Append(this._fadePanel.GetComponent<Image>().DOColor(this._alphaFadeTo255,this._delayColorPanelTransition/2));
 		this._splashScreen.Play();
 
-		this._splashScreen.OnComplete(()=> SceneManager.LoadScene(1));
+		this._splashScreen.OnComplete(()=> transicion());
+	}
+
+	public void transicion()
+	{
+		// var doorway = new DoorwayTransition()
+		// {
+		// 	nextScene = SceneManager.GetActiveScene().buildIndex == 1 ? 2 : 1,
+		// 	duration = 1.0f,
+		// 	perspective = 1.5f,
+		// 	depth = 3f,
+		// 	runEffectInReverse = false
+		// };
+		// TransitionKit.instance.transitionWithDelegate( doorway );
+
+		var wind = new WindTransition()
+		{
+			nextScene = SceneManager.GetActiveScene().buildIndex == 1 ? 2 : 1,
+			duration = 1.0f,
+			size = 0.3f
+		};
+		TransitionKit.instance.transitionWithDelegate( wind );
+
+
 	}
 }
